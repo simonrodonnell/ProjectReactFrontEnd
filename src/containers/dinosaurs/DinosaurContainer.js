@@ -49,7 +49,7 @@ render(){
     <Route exact path='dinosaurs/:id' render={(props) => {
       const id = props.match.params.id;
       const dinosaur = this.findDinosaurById(id);
-      return <DinosaurDetail dinosaur={dinsoaur} onDelete={this.handleDelete}/>
+      return <DinosaurDetail dinosaur={dinosaur} onDelete={this.handleDelete}/>
     }}/>
 
     <Route render={(props) => {

@@ -18,7 +18,7 @@ const DinosaurDetail = (props) => {
 
     <div className="component">
     <Dinosaur dinosaur= {props.dinosaur}/>
-    <button onClick={handeDelete}>Delete {props.dinosaur.name}</button>
+    <button onClick={handleDelete}>Delete {props.dinosaur.name}</button>
     <Link to={editUrl}><button type="button">Edit {props.dinosaur.name}</button></Link>
     </div>
   )
