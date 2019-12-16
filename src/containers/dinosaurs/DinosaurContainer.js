@@ -37,7 +37,7 @@ findDinosaurById(id){
 
 handleDelete(id){
   const request = new Request();
-  const url = '/api/dinosaurs/' + id;
+  const url = 'http://localhost:8080/api/dinosaurs/' + id;
   request.delete(url).then(() => {
     window.location = '/dinosaurs'
   })
@@ -45,14 +45,14 @@ handleDelete(id){
 
 handlePost(dinosaur){
   const request = new Request();
-  request.post('/api/dinosaurs/', dinosaur).then(() => {
+  request.post('http://localhost:8080/api/dinosaurs/', dinosaur).then(() => {
     window.location = '/dinosaurs'
   })
 }
 
 handleUpdate(dinosaur, id){
   const request = new Request();
-  request.patch('/api/dinosaurs/' + id, dinosaur).then(() => {
+  request.patch('http://localhost:8080/api/dinosaurs/' + id, dinosaur).then(() => {
     window.location = '/dinosaurs/' + id
   })
 }
