@@ -8,6 +8,9 @@ const NavBar = (props) => {
         <li className="navLink">
           <a href="/dinosaurs">Dinosaurs</a>
         </li>
+        <li className="navLink">
+          <a href="/dinosaurs/new">Create Dinosaur</a>
+        </li>
 
       </ul>
     </header>

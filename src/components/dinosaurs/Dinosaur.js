@@ -7,6 +7,7 @@ const Dinosaur = (props) => {
   }
 
 const url = "/dinosaurs/" + props.dinosaur.id;
+// console.log("URL:", url)
 
 return(
 
