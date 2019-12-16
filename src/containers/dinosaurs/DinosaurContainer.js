@@ -17,7 +17,7 @@ class DinosaurContainer extends Component {
   componentDidMount(){
     const request = new Request();
 
-    request.get('/api/dinosaurs')
+    request.get('http://localhost:8080/api/dinosaurs')
     .then((data) => {
       // console.log("Data: ", data);
       this.setState({dinosaurs: data._embedded.dinosaurs})
