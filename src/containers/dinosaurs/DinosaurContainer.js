@@ -13,6 +13,7 @@ class DinosaurContainer extends Component {
     this.state = {
       dinosaurs: []
     }
+    this.findDinosaurById = this.findDinosaurById.bind(this);
   }
   componentDidMount(){
     const request = new Request();
@@ -25,14 +26,37 @@ class DinosaurContainer extends Component {
   )
 }
 
+findDinosaurById(id){
+  return this.state.dinosaurs.find((dinosaur) => {
+    return dinosaur.id === parseInt(id);
+  });
+}
+
+handleDelete(id){
+  const request = new Request();
+  const url = '/api/dinosaurs/' + id;
+  request.delete(url).then(() => {
+    window.location = '/dinosaurs'
+  })
+}
+
 render(){
   return(
     <Router>
     <Fragment>
     <Switch>
-        <Route render={(props) => {
-          return <DinosaurList dinosaurs={this.state.dinosaurs}/>
-        }}/>
+
+    <Route exact path='dinosaurs/:id' render={(props) => {
+      const id = props.match.params.id;
+      const dinosaur = this.findDinosaurById(id);
+      return <DinosaurDetail dinosaur={dinsoaur} onDelete={this.handleDelete}/>
+    }}/>
+
+    <Route render={(props) => {
+      return <DinosaurList dinosaurs={this.state.dinosaurs}/>
+    }}/>
+
+
     </Switch>
     </Fragment>
     </Router>
