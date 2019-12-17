@@ -30,7 +30,7 @@ class DinosaurEditForm extends Component {
   render(){
 
     const paddockOptions = this.state.paddocks.map((paddock, index) => {
-      return <option key={index} value={paddock._links.self.href}>{paddock.type}</option>
+      return <option key={index} value={paddock._links.self.href}>{paddock.name}</option>
     })
 
     return(

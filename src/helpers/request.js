@@ -1,7 +1,6 @@
 class Request {
 
 get(url) {
-  console.log(url);
   return fetch(url)
   .then((res) => res.json());
 }
@@ -22,6 +21,7 @@ post(url, payload){
 }
 
 patch(url, payload){
+  console.log(url);
   return fetch(url, {
     method: "PATCH",
     headers: {'Content-Type': 'application/json'},
