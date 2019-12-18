@@ -3,8 +3,10 @@ import React from 'react';
 const NavBar = (props) => {
   return (
     <header>
+      <img className="logo" src= "https://i.ebayimg.com/images/g/MJIAAOSwPR9bv4o5/s-l300.jpg"/>
 
       <ul>
+
         <li className="navLink">
           <a href="/parks">Park Admin</a>
         </li>
@@ -21,8 +23,9 @@ const NavBar = (props) => {
           <a href="/paddocks/new">Create Paddock</a>
         </li>
 
-      </ul>
-    </header>
-  )
-}
-export default NavBar
+
+        </ul>
+      </header>
+    )
+  }
+  export default NavBar
